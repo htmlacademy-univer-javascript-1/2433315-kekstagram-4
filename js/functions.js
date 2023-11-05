@@ -24,6 +24,7 @@ const getNumber=function(str) {
 };
 getNumber('ab2c5');
 
+
 const findTimeInMinutes = function (stringTime) {
   const [hour, minute] =  stringTime.split(':');
   return Number(hour) * 60 + Number(minute);
@@ -37,3 +38,4 @@ const checkMeeting = function (startDay, EndDay, startMeeting, timeMeeting) {
 };
 
 checkMeeting('08:00', '17:30', '14:00', 90);
+
