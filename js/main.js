@@ -1,4 +1,4 @@
-import {createDescriptionPhoto} from './data.js';
+/*import {createDescriptionPhoto} from './data.js';
 
 const PHOTO_COUNT = 25;
 
@@ -7,4 +7,9 @@ const descriptionPhoto = Array.from({length: PHOTO_COUNT}, createDescriptionPhot
 descriptionPhoto();
 
 import {createThumbnails} from './thumbnails.js';
-createThumbnails(descriptionPhoto());
+createThumbnails(descriptionPhoto());*/
+
+import {descriptionPhotos} from './data.js';
+import {renderGallery} from './gallery.js';
+
+renderGallery(descriptionPhotos());
