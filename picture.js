@@ -1,4 +1,5 @@
 import {isEscapeKey} from './util.js';
+import {updateComments} from './comments.js';
 
 const bigPictureElement = document.querySelector('.big-picture');
 const cancelButtonElement = document.querySelector('.big-picture__cancel');
@@ -41,7 +42,7 @@ const closeBigPicture = () => {
   bigPictureElement.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
   document.removeEventListener('keydown', onDocumentKeydown);
-  document.removeEventListener('click', cancelButtonElement);
+  document.removeEventListener('click', onCancelButtonClick);
 };
 
 function onDocumentKeydown (evt) {
@@ -54,16 +55,19 @@ function onDocumentKeydown (evt) {
 const openBigPicture = (data) => {
   bigPictureElement.classList.remove('hidden');
   bodyElement.classList.add('modal-open');
-  commentsLoaderElement.classList.add('hidden');
-  commentCountElement.classList.add('hidden');
   document.addEventListener('keydown', onDocumentKeydown);
+  cancelButtonElement.addEventListener('click', onCancelButtonClick);
 
   renderPictureDetails(data);
-  renderComments(data.comments);
+  updateComments(data);
 };
 
 cancelButtonElement.addEventListener('click', () => {
   closeBigPicture();
 });
+
+function onCancelButtonClick () {
+  closeBigPicture();
+}
 
 export {openBigPicture};
