@@ -1,20 +1,23 @@
-import {openBigPicture} from './picture.js';
-import {createThumbnails} from './thumbnails.js';
+import {openBigPicture} from './big_picture.js';
+import {renderThumbnails} from './thumbnails.js';
 
 const container = document.querySelector('.pictures');
+
 const renderGallery = (pictures) => {
   container.addEventListener('click', (evt) => {
-
     const thumbnail = evt.target.closest('[data-thumbnail-id]');
-
-    if (!thumbnail) {return;}
+    if (!thumbnail) {
+      return;
+    }
 
     evt.preventDefault();
-    const picture = pictures.find((item) => item.id === +thumbnail.dataset.thumbnailId);
+    const picture = pictures.find(
+      (item) => item.id === +thumbnail.dataset.thumbnailId
+    );
     openBigPicture(picture);
   });
 
-  createThumbnails(pictures, container);
+  renderThumbnails(pictures, container);
 };
 
 export { renderGallery };
