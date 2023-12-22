@@ -1,4 +1,4 @@
-import {getRandomArrayElement, createIdGenerator, getRandomInteger} from './util.js';
+/*import {getRandomArrayElement, createIdGenerator, getRandomInteger} from './util.js';
 
 const PHOTO_COUNT = 25;
 const AVATAR_COUNT = 6;
@@ -63,3 +63,4 @@ const getPictures = () => Array.from(
 );
 
 export {getPictures};
+*/
