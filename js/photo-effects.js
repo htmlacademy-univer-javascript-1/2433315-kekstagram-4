@@ -1,4 +1,4 @@
-import { EFFECTS_INFORMATION } from './effects_data.js';
+import { EFFECTS_INFORMATION } from './effects-data.js';
 
 const EFFECT_DEFAUL = EFFECTS_INFORMATION[0];
 let currentEffect = EFFECT_DEFAUL;

@@ -1,9 +1,9 @@
 import { pristine } from './validation.js';
 import {sendData} from './api.js';
-import {showSuccessMessage, showErrorMessage} from './sending_message.js';
+import {showSuccessMessage, showErrorMessage} from './sending-message.js';
 import {isEscapeKey} from './util.js';
 import { removeScale, initScale } from './scale.js';
-import { removeEffect, initEffect } from './photo_effects.js';
+import { removeEffect, initEffect } from './photo-effects.js';
 
 const bodyElement = document.querySelector('body');
 const form = document.querySelector('.img-upload__form');
@@ -59,7 +59,7 @@ const onFormInput = (evt) => {
   }
 };
 
-function openEditPopup () {
+function onOpenEditPopup () {
   overlayElement.classList.remove('hidden');
   bodyElement.classList.add('modal-open');
   document.addEventListener('keydown', onDocumentKeydown);
@@ -86,7 +86,7 @@ function onCancelButtonClick () {
 
 const initEditPopup = () => {
   initEffect();
-  filefield.addEventListener('change', openEditPopup);
+  filefield.addEventListener('change', onOpenEditPopup);
 };
 
 export {initEditPopup};
