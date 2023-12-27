@@ -44,6 +44,7 @@ const updateComments = (data) => {
   comments = data.comments;
   commentsShow = 0;
   renderComments();
+  commentsLoaderElement.addEventListener('click', onCommentsLoaderClick);
 };
 
 function onCommentsLoaderClick () {
